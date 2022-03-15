@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-export const RecipeListContainer=styled.div`
+const RecipeListContainer=styled.div`
 display:flex;
 flex-direction:row;
 flex-wrap:wrap;
@@ -7,34 +7,50 @@ padding:30px;
 gap:20px;
 justiy-content:space-evenly;
 `;
-export const RecipeContainer=styled.div`
+const RecipeContainer=styled.div`
 display:flex;
 flex-direction:column;
-padding:30px; 
+padding:10px; 
 width:300px;
 box-shadow:0 3px 10px 0 #aaa;
 `;
-export const CoverImage=styled.img`
+const CoverImage=styled.img`
+object-fit:cover;
 height:200px;
 `;
-export const RecipeName=styled.span`
-font-size:18px;
-font-weight:bold;
-color:black;
-margin:10px 0;
+const RecipeName=styled.span`
+ font-size: 18px;
+  font-weight: 600;
+  color: black;
+  margin: 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
-export const IngredientsText=styled.span`
-font-size:18px;
+const SeeMoreText=styled.span`
+color: #eb3300;
+  font-size: 18px;
+  text-align: center;
+  border: solid 1px #eb3300;
+  border-radius: 3px;
+  padding: 10px 15px;
+  cursor: pointer;
+`;
+const IngredientsText=styled(SeeMoreText)`
 border:solid 1px green;
-color:black;
-cursor:pointer;
-padding:10px 15px;
-border-radius:4px;
 color:green;
-text-align:center;
 margin-bottom:12px;
 `;
-export const SeeMoreText=styled(IngredientsText)`
-color:#eb3300;
-border:solid 1px #eb3300;
+const SeeNewTab = styled(SeeMoreText)`
+  color: green;
+  border: solid 1px green;
 `;
+export default{
+    RecipeListContainer,
+    RecipeContainer,
+    CoverImage,
+    RecipeName,
+    IngredientsText,
+    SeeMoreText,
+    SeeNewTab
+}
